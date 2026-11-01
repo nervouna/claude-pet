@@ -1,0 +1,62 @@
+name: Bug report
+description: Something about the pet doesn't work as described.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What the pet does (or doesn't do). A screenshot or screen recording helps with animation bugs.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to reproduce
+      description: What you did in Claude Code or with the pet, step by step.
+      placeholder: |
+        1. Start the pet with npm start
+        2. Ask Claude Code to ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Part
+      options:
+        - Animations and how the pet looks
+        - Which state the pet shows for what Claude Code does
+        - Window, dragging, menu bar icon
+        - Hooks installer
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Claude Pet version
+      description: Release tag or commit (git rev-parse --short HEAD).
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+    validations:
+      required: true
+  - type: input
+    id: claude-code
+    attributes:
+      label: Claude Code version
+      description: Output of claude --version, or the desktop app version.
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix (optional)
