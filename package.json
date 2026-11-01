@@ -1,0 +1,21 @@
+{
+  "name": "claude-pet",
+  "version": "0.1.0",
+  "description": "A 3D voxel desktop pet that reacts to what Claude Code is doing",
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "preview": "python3 -m http.server 5178 --bind 127.0.0.1",
+    "hooks:install": "node scripts/hooks.mjs install",
+    "hooks:uninstall": "node scripts/hooks.mjs uninstall"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.2.1"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "repository": "github:nervouna/claude-pet"
+}
