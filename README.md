@@ -44,6 +44,19 @@ The pet appears in the bottom-right corner and adds a menu bar icon (Size, Play 
 
 **Play Demo** feeds a scripted session through the same pipeline as real hooks, so you can see every animation without running Claude Code.
 
+### Run with PM2
+
+If PM2 is already installed, run these commands from the project directory:
+
+```bash
+pm2 start ecosystem.config.cjs
+pm2 save
+```
+
+The configuration manages one Electron process, including the pet window and hook server. Run PM2 in your logged-in macOS desktop session. `pm2 save` includes the pet in the saved process list for `pm2 resurrect`; it does not configure login startup.
+
+Use `pm2 status claude-pet` to check it, `pm2 restart claude-pet` to restart it, and `pm2 stop claude-pet` to stop it. PM2 automatically restarts the pet after it exits, including when you choose **Quit Claude Pet** from the menu. After changing its saved running or stopped state, run `pm2 save` again.
+
 ## Connect Claude Code
 
 The pet listens on `127.0.0.1:46821` (override with `CLAUDE_PET_PORT`). Claude Code reports to it through hooks that `curl` each hook payload there. Install them into your user settings:
